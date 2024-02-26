@@ -15,49 +15,35 @@
 			font-family: 'Plus Jakarta Sans', sans-serif;
 			min-height: 100vh;
 			}
-			
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  textarea,
-  select {
-    background: rgba(255,255,255,0.1);
-    border: none;
-    font-size: 16px;
-    height: auto;
-    margin: 0;
-    outline: 0;
-    padding: 15px;
-    width: 100%;
-    background-color: #e8eeef;
-    color: #272727;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 30px;
-  }
+			input:not([type]):focus:not([readonly]),input[type=text]:not(.browser-default):focus:not([readonly]),input[type=password]:not(.browser-default):focus:not([readonly]),input[type=email]:not(.browser-default):focus:not([readonly]),input[type=url]:not(.browser-default):focus:not([readonly]),input[type=time]:not(.browser-default):focus:not([readonly]),input[type=date]:not(.browser-default):focus:not([readonly]),input[type=datetime]:not(.browser-default):focus:not([readonly]),input[type=datetime-local]:not(.browser-default):focus:not([readonly]),input[type=tel]:not(.browser-default):focus:not([readonly]),input[type=number]:not(.browser-default):focus:not([readonly]),input[type=search]:not(.browser-default):focus:not([readonly]),textarea.materialize-textarea:focus:not([readonly]) {
+			border-bottom: 1px solid #235789;
+			-webkit-box-shadow: 0 1px 0 0 #235789;
+			box-shadow: 0 1px 0 0 #235789;
+			}
 			input:not([type]):focus:not([readonly])+label,input[type=text]:not(.browser-default):focus:not([readonly])+label,input[type=password]:not(.browser-default):focus:not([readonly])+label,input[type=email]:not(.browser-default):focus:not([readonly])+label,input[type=url]:not(.browser-default):focus:not([readonly])+label,input[type=time]:not(.browser-default):focus:not([readonly])+label,input[type=date]:not(.browser-default):focus:not([readonly])+label,input[type=datetime]:not(.browser-default):focus:not([readonly])+label,input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,input[type=tel]:not(.browser-default):focus:not([readonly])+label,input[type=number]:not(.browser-default):focus:not([readonly])+label,input[type=search]:not(.browser-default):focus:not([readonly])+label,textarea.materialize-textarea:focus:not([readonly])+label {
-			color: #0d47a1;
+			color: #235789;
 			}
 			button {
 			height: 3rem !important;
 			line-height: 3rem !important;
 			}
 			.dropdown-content li>a, .dropdown-content li>span {
-			color: #0d47a1;
+			color: #235789;
 			}
 			.select-wrapper input.select-dropdown:focus {
-			border-bottom: 1px solid #0d47a1;
+			border-bottom: 1px solid #235789;
 			}
 			.datepicker-date-display {
-			background-color: #0d47a1;
+			background-color: #235789;
 			}
 			.datepicker-table td.is-selected {
-			background-color: #0d47a1;
+			background-color: #235789;
 			}
 			.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
-			color: #0d47a1;
+			color: #235789;
 			}
 			.datepicker-table td.is-today {
-			color: #0d47a1;
+			color: #235789;
 			}
 			.datepicker-table td.is-selected {
 			color: #ffffff;
@@ -176,7 +162,7 @@
 						<a href="#" data-target="slide-out" class="sidenav-trigger waves-effect waves-light">
 						<span class="material-symbols-outlined">menu</span>
 						</a>
-						<img src="smk_logo.png" height="50">
+						<img src="../img/smk_logo.png" height="50">
 						<ul id="nav-mobile" class="right hide-on-med-and-down">
 							<li><a href="#">Home</a></li>
 							<li><a href="#">About</a></li>
