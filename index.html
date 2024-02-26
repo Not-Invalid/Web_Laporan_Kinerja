@@ -8,42 +8,43 @@
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
 		<style>
 			html, body {
-			font-family: 'Plus Jakarta Sans', sans-serif;
+			font-family: 'Poppins', sans-serif;
 			min-height: 100vh;
 			}
 			input:not([type]):focus:not([readonly]),input[type=text]:not(.browser-default):focus:not([readonly]),input[type=password]:not(.browser-default):focus:not([readonly]),input[type=email]:not(.browser-default):focus:not([readonly]),input[type=url]:not(.browser-default):focus:not([readonly]),input[type=time]:not(.browser-default):focus:not([readonly]),input[type=date]:not(.browser-default):focus:not([readonly]),input[type=datetime]:not(.browser-default):focus:not([readonly]),input[type=datetime-local]:not(.browser-default):focus:not([readonly]),input[type=tel]:not(.browser-default):focus:not([readonly]),input[type=number]:not(.browser-default):focus:not([readonly]),input[type=search]:not(.browser-default):focus:not([readonly]),textarea.materialize-textarea:focus:not([readonly]) {
-			border-bottom: 1px solid #235789;
-			-webkit-box-shadow: 0 1px 0 0 #235789;
-			box-shadow: 0 1px 0 0 #235789;
+			border-bottom: 1px solid #3d5a80;
+			-webkit-box-shadow: 0 1px 0 0 #3d5a80;
+			box-shadow: 0 1px 0 0 #3d5a80;
 			}
 			input:not([type]):focus:not([readonly])+label,input[type=text]:not(.browser-default):focus:not([readonly])+label,input[type=password]:not(.browser-default):focus:not([readonly])+label,input[type=email]:not(.browser-default):focus:not([readonly])+label,input[type=url]:not(.browser-default):focus:not([readonly])+label,input[type=time]:not(.browser-default):focus:not([readonly])+label,input[type=date]:not(.browser-default):focus:not([readonly])+label,input[type=datetime]:not(.browser-default):focus:not([readonly])+label,input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,input[type=tel]:not(.browser-default):focus:not([readonly])+label,input[type=number]:not(.browser-default):focus:not([readonly])+label,input[type=search]:not(.browser-default):focus:not([readonly])+label,textarea.materialize-textarea:focus:not([readonly])+label {
-			color: #235789;
+			color: #3d5a80;
 			}
 			button {
 			height: 3rem !important;
 			line-height: 3rem !important;
 			}
 			.dropdown-content li>a, .dropdown-content li>span {
-			color: #235789;
+			color: #3d5a80;
 			}
 			.select-wrapper input.select-dropdown:focus {
-			border-bottom: 1px solid #235789;
+			border-bottom: 1px solid #3d5a80;
 			}
 			.datepicker-date-display {
-			background-color: #235789;
+			background-color: #3d5a80;
 			}
 			.datepicker-table td.is-selected {
-			background-color: #235789;
+			background-color: #3d5a80;
 			}
 			.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
-			color: #235789;
+			color: #3d5a80;
 			}
 			.datepicker-table td.is-today {
-			color: #235789;
+			color: #3d5a80;
 			}
 			.datepicker-table td.is-selected {
 			color: #ffffff;
@@ -54,13 +55,8 @@
 			.d-none {
 			display: none;
 			}
-			.fade {
-			opacity: 0;
-			transition: opacity 0.5s ease-in-out;
-			}
-			.show {
-			opacity: 1;
-			transition: opacity 0.5s ease-in-out;
+			.row{
+				margin-top: 3rem;
 			}
 			.container-nav {
 			display: flex;
@@ -145,98 +141,72 @@
 			.m-btn-1 {
 			margin: 0.8rem 0 0rem 0;
 			}
+		
 		</style>
 	</head>
 	<body>
-		<div class="blue darken-4" id="preloader" style="min-height: 100vh; max-height: 100vh; width: 100%; position: absolute; display: flex; justify-content: center; align-items: center;">
+		<div class="" id="preloader" style="min-height: 100vh; max-height: 100vh; width: 100%; position: absolute; display: flex; justify-content: center; align-items: center;">
 			<div class="container">
-				<div class="progress">
-					<div class="indeterminate"></div>
-				</div>
+
 			</div>
 		</div>
-		<div id="app" class="d-none">
+		<div id="app" class="">
 			<nav>
-				<div class="nav-wrapper blue darken-4">
+				<div class="nav-wrapper grey darken-4">
 					<div class="container container-nav">
 						<a href="#" data-target="slide-out" class="sidenav-trigger waves-effect waves-light">
 						<span class="material-symbols-outlined">menu</span>
 						</a>
-						<img src="../img/smk_logo.png" height="50">
+						<img src="smk_logo.png" height="50">
 						<ul id="nav-mobile" class="right hide-on-med-and-down">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Contact</a></li>
+							<li><a href="home.html">Home</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 			<ul id="slide-out" class="sidenav">
-				<li>
-					<div class="user-view">
-						<div class="background blue darken-4">
-						</div>
-						<img class="circle" src="images/yuna.jpg">
-						<span class="white-text name">Selamat Datang</span>
-						<span class="white-text email"></span>
-					</div>
-				</li>
-				<li><a href="#!" class="waves-effect menu"><span class="material-symbols-outlined">home</span>Home</a></li>
-				<li><a href="#!" class="waves-effect menu"><span class="material-symbols-outlined">info</span>About</a></li>
-				<li><a href="#!" class="waves-effect menu"><span class="material-symbols-outlined">settings</span>Services</a></li>
-				<li>
-					<div class="divider"></div>
-				</li>
-				<li><a class="subheader">Contact</a></li>
-				<li><a class="waves-effect menu" href="#!"><span class="material-symbols-outlined">mail</span>Contact Us</a></li>
+				<li><a href="home.html" class="waves-effect menu"><span class="material-symbols-outlined">home</span>Home</a></li>
 			</ul>
 			<div class="container" style="padding-top: 1rem; padding-bottom: 1rem;">
-				<h5>Laporan Realisasi Target Kinerja</h5>
+				<h5 class="center">Form Laporan Hasil Kinerja Guru</h5>
 				<form id="form" action="https://script.google.com/macros/s/AKfycbwrFQZEgVxe-fwjJ1PACbFngwQ3bqwB271R7KlRdt3cDHFooOB8Z2ONr_162KzIQiG14A/exec" method="POST">
 					<div class="row">
-						<div class="input-field col s12">
-							<input id="nomor_laporan" name="nomor_laporan" type="text" class="validate" required>
+						<div class="input-field col-6 ">
+							<input id="nomor_laporan" placeholder="Nomor Laporan" name="nomor_laporan" type="text" class="validate form-control" required>
 							<label for="nomor_laporan">Nomor Laporan</label>
 						</div>
-						<div class="input-field col s6">
-							<input id="nama_kegiatan" name="nama_kegiatan" type="text" class="validate" required>
+						<div class="input-field col-6 ">
+							<input id="nama_kegiatan"  placeholder="Masukkan Nama Kegiatan" name="nama_kegiatan" type="text" class="validate" required>
 							<label for="nama_kegiatan">Nama Kegiatan</label>
 						</div>
-						<div class="input-field col s6">
+						<div class="input-field col-6">
 							<select name="jenis_kegiatan" id="jenis_kegiatan">
-								<option value="KBM" selected>KBM</option>
+								<option value="" disabled selected hidden>Pilih Jenis Kegiatan</option>
+								<option value="KBM">KBM</option>
 								<option value="Non-KBM">Non-KBM</option>
 							</select>
 							<label>Jenis Kegiatan</label>
 						</div>
-						<div class="input-field col s6">
-							<input type="text" id="datePicker" name="datePicker" class="datepicker" required>
+						<div class="input-field col-6 ">
+							<input type="text" id="datePicker"  placeholder="" name="datePicker" class="datepicker" required>
 							<label>Tanggal Kegiatan</label>
 						</div>
-						<div class="input-field col s6">
-							<button type="button" class="waves-effect waves-light btn modal-trigger blue darken-4 w-100 btn-icon-center" data-target="modalImage">
-							<span class="material-symbols-outlined">folder_open</span>PILIH GAMBAR
-							</button>
-							<!--<div class="btn blue darken-4 waves-effect waves-light">
-								<span>Pilih Gambar</span>
-								<input type="file" id="imageFile" required>
-								</div>
-								<div class="file-path-wrapper">
-								<input class="file-path validate" type="text" readonly>
-								</div>-->
-							<input type="hidden" id="image_activity" name="image_activity">
-						</div>
-						<div class="input-field col s12">
-							<textarea id="uraian_kegiatan" name="uraian_kegiatan" class="materialize-textarea" required></textarea>
+						<div class="input-field col-6 ">
+							<textarea id="uraian_kegiatan" placeholder="" name="uraian_kegiatan" class="materialize-textarea" required></textarea>
 							<label for="uraian_kegiatan">Uraian Kegiatan</label>
 						</div>
-						<div class="input-field col s12">
-							<textarea id="target_capaian" name="target_capaian" class="materialize-textarea" required></textarea>
+						<div class="input-field col-6 ">
+							<textarea id="target_capaian"  placeholder="" name="target_capaian" class="materialize-textarea" required></textarea>
 							<label for="target_capaian">Target Capaian</label>
 						</div>
+						<div class="input-field col-6 ">
+							<button type="button" class="waves-effect waves-light btn modal-trigger grey darken-4 w-100 btn-icon-center" data-target="modalImage">
+							<span class="material-symbols-outlined">folder_open</span>PILIH GAMBAR
+							</button>
+							<input type="hidden" id="image_activity" name="image_activity">
+						</div>
 						<div class="col s12">
-							<button type="submit" class="waves-effect waves-light btn blue darken-4 btn-icon-start">
+							<button type="submit" class="waves-effect waves-light btn grey darken-4 btn-icon-start">
 							<span class="material-symbols-outlined">save</span>SIMPAN DATA
 							</button>
 						</div>
@@ -248,23 +218,23 @@
 			<div class="modal-content" style="text-align: center;">
 				<h5 class="modal-title">Pilih Gambar</h5>
 				<div class="">
-				    <button type="button" class="modal-trigger waves-effect waves-light btn blue m-btn-1 darken-4 btn-icon-center w-100 modal-close" data-target="modalUpload">
+				    <button type="button" class="modal-trigger waves-effect waves-light btn grey m-btn-1 darken-4 btn-icon-center w-100 modal-close" data-target="modalUpload">
 				<span class="material-symbols-outlined">upload_file</span>UNGGAH GAMBAR
 				</button>
-				<button type="button" class="modal-trigger waves-effect waves-light btn blue m-btn-2 darken-4 btn-icon-center w-100 modal-close" data-target="modalCapture" onclick="captureModal()">
+				<button type="button" class="modal-trigger waves-effect waves-light btn grey m-btn-2 darken-4 btn-icon-center w-100 modal-close" data-target="modalCapture" onclick="captureModal()">
 				<span class="material-symbols-outlined">camera</span>AMBIL GAMBAR
 				</button>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect waves-light btn-flat text-blue darken-4">TUTUP</a>
+				<a href="#!" class="modal-close waves-effect waves-light btn-flat text-grey darken-4">TUTUP</a>
 			</div>
 		</div>
 		<div id="modalUpload" class="modal">
 			<div class="modal-content" style="text-align: center;">
 				<h5 class="modal-title">Unggah Gambar</h5>
 				<div class="file-field input-field">
-					<div class="btn blue darken-4 waves-effect waves-light">
+					<div class="btn grey darken-4 waves-effect waves-light">
 						<span>PILIH GAMBAR</span>
 						<input type="file" id="imageFile">
 					</div>
@@ -274,7 +244,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect waves-light btn blue darken-4">Simpan</a>
+				<a href="#!" class="modal-close waves-effect waves-light btn grey darken-4">Simpan</a>
 			</div>
 		</div>
 		<div id="modalCapture" class="modal">
@@ -282,11 +252,12 @@
 				<h5 class="modal-title">Ambil Gambar</h5>
 				<video autoplay="true" id="video"></video>
 				<canvas id="canvas" style="display: none;"></canvas>
-				<button type="button" class="waves-effect waves-light btn blue darken-4 m-auto" onclick="capture()" id="btnCapture" style="display: block;">Ambil Gambar</button>
-				<button type="button" class="waves-effect waves-light btn blue darken-4 m-auto" id="btnResetCapture" style="display: none;">Ulang Ambil Gambar</button>
+				<button type="button" class="waves-effect waves-light btn grey darken-4 m-auto" onclick="capture()" id="btnCapture" style="display: block;">Ambil Gambar</button>
+				<button type="button" class="waves-effect waves-light btn grey darken-4 m-auto" id="btnResetCapture" style="display: none;">Ulang Ambil Gambar</button>
 			</div>
 			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect waves-light btn blue darken-4">Simpan</a>
+				<a href="#!" class="modal-close waves-effect waves-light btn grey darken-4">Simpan</a>
+				
 			</div>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -388,23 +359,22 @@
 			         	var modalInstances = M.Modal.init(modal);
 			         
 			         	setTimeout(function () {
-			         		var preloader = document.getElementById('preloader');
 			         		var app = document.getElementById('app');
 			         
 			         		preloader.classList.add('fade');
 			         
 			         		setTimeout(function () {
 			         			preloader.classList.add('d-none');
-			         		}, 500);
+			         		}, 0);
 			         
 			         		setTimeout(function () {
 			         			app.classList.remove('d-none');
-			         		}, 300)
+			         		}, 0)
 			         
 			         		setTimeout(function () {
 			         			app.classList.add('show');
-			         		}, 300);
-			         	}, 1000);
+			         		}, 0);
+			         	}, 0);
 			         });
 		</script>
 	</body>

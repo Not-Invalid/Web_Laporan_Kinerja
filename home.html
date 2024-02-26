@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Profile Card</title>
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <div class="card" data-state="#about">
+         <div class="card-header">
+            <img src="smk_logo.png" alt="" class="image-cover" />
+            <h1 class="full-name">Smkn 4 Tangerang</h1>
+            <h2 class="job-title">UI Developer</h2>
+         </div>
+         <div class="card-main">
+            <div class="card-section is-active" id="about">
+               <div class="card-content">
+                  <h2 class="card-sub">About</h2>
+                  <p class="card-dec">
+                     Ini adalah bagian tentang informasi umum.
+                  </p>
+                  <br>
+                  <a href="index.html">Forms</a>
+               </div>
+            </div>
+            <div class="card-section" id="rules">
+               <div class="card-content">
+                  <h2 class="card-sub">Rules</h2>
+                  <p class="card-dec">Ini adalah bagian tentang peraturan.</p>
+                  <div class="timeline">
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                           <h3 class="timeline-title">Peraturan 1</h3>
+                           <p>Deskripsi peraturan 1.</p>
+                        </div>
+                     </div>
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                           <h3 class="timeline-title">Peraturan 2</h3>
+                           <p>Deskripsi peraturan 2.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="card-section" id="info">
+               <div class="card-content">
+                  <h2 class="card-sub">Contact</h2>
+                  <p class="card-dec">
+                     Ini adalah bagian tentang informasi kontak.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="card-buttons">
+            <button data-section="#about" class="is-active">About</button>
+            <button data-section="#rules">Rules</button>
+            <button data-section="#info">Contact</button>
+         </div>
+      </div>
+      <script>
+        const buttons = document.querySelectorAll(".card-buttons > button");
+
+buttons.forEach((btn) => {
+   btn.addEventListener("click", function () {
+      buttons.forEach((item) => item.classList.remove("is-active"));
+      btn.classList.add("is-active");
+
+      const cardHeader = document.querySelector(".card-header");
+      const card = document.querySelector(".card");
+      const section = btn.getAttribute("data-section");
+      card.setAttribute("data-state", section);
+      const imageCover = document.querySelector(".image-cover");
+
+      if (section === "#rules" || section === "#info") {
+         cardHeader.style.height = "70px";
+         imageCover.style.transform =
+            "translateX(-180%) translateY(24px) scale(0.5)";
+      } else {
+         cardHeader.style.height = "200px";
+         imageCover.style.transform =
+            "translateX(-50%) translateY(-72px) scale(1)";
+      }
+
+      const sections = document.querySelectorAll(".card-section");
+      sections.forEach((sectionElement) => {
+         if ("#" + sectionElement.id === section) {
+            sectionElement.classList.add("is-active");
+         } else {
+            sectionElement.classList.remove("is-active");
+         }
+      });
+   });
+});
+
+      </script>
+   </body>
+</html>
