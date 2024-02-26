@@ -193,18 +193,18 @@
 			</ul>
 			<div class="container" style="padding-top: 1rem; padding-bottom: 1rem;">
 				<h5>Laporan Realisasi Target Kinerja</h5>
-				<form id="form" action="https://script.google.com/macros/s/AKfycbxlNTC1_UHTIq_uPUtEmjbx0E9vGHcYSP0nrFQsn6WxClKCea3NcheNar0JO2EIk5zp/exec" method="POST">
+				<form id="form" action="https://script.google.com/macros/s/AKfycbwrFQZEgVxe-fwjJ1PACbFngwQ3bqwB271R7KlRdt3cDHFooOB8Z2ONr_162KzIQiG14A/exec" method="POST">
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="number_report" name="number_report" type="text" class="validate" required>
-							<label for="number_report">Nomor Laporan</label>
+							<input id="nomor_laporan" name="nomor_laporan" type="text" class="validate" required>
+							<label for="nomor_laporan">Nomor Laporan</label>
 						</div>
 						<div class="input-field col s6">
-							<input id="activity_name" name="activity_name" type="text" class="validate" required>
-							<label for="activity_name">Nama Kegiatan</label>
+							<input id="nama_kegiatan" name="nama_kegiatan" type="text" class="validate" required>
+							<label for="nama_kegiatan">Nama Kegiatan</label>
 						</div>
 						<div class="input-field col s6">
-							<select name="activity_type" id="activity_type">
+							<select name="jenis_kegiatan" id="jenis_kegiatan">
 								<option value="KBM" selected>KBM</option>
 								<option value="Non-KBM">Non-KBM</option>
 							</select>
@@ -228,12 +228,12 @@
 							<input type="hidden" id="image_activity" name="image_activity">
 						</div>
 						<div class="input-field col s12">
-							<textarea id="detail_activity" name="detail_activity" class="materialize-textarea" required></textarea>
-							<label for="detail_activity">Uraian Kegiatan</label>
+							<textarea id="uraian_kegiatan" name="uraian_kegiatan" class="materialize-textarea" required></textarea>
+							<label for="uraian_kegiatan">Uraian Kegiatan</label>
 						</div>
 						<div class="input-field col s12">
-							<textarea id="achievement_target" name="achievement_target" class="materialize-textarea" required></textarea>
-							<label for="achievement_target">Target Capaian</label>
+							<textarea id="target_capaian" name="target_capaian" class="materialize-textarea" required></textarea>
+							<label for="target_capaian">Target Capaian</label>
 						</div>
 						<div class="col s12">
 							<button type="submit" class="waves-effect waves-light btn blue darken-4 btn-icon-start">
