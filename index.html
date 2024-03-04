@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Web Laporan Kinerja Guru</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -155,7 +155,7 @@
 				<div class="nav-wrapper grey darken-4">
 					<div class="container container-nav">
 						<a href="#" data-target="slide-out" class="sidenav-trigger waves-effect waves-light">
-						<span class="material-symbols-outlined">menu</span>
+						<span class="material-symbols-outlined">Menu</span>
 						</a>
 						<img src="smk_logo.png" height="50">
 						<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -172,11 +172,11 @@
 				<form id="form" action="https://script.google.com/macros/s/AKfycbwrFQZEgVxe-fwjJ1PACbFngwQ3bqwB271R7KlRdt3cDHFooOB8Z2ONr_162KzIQiG14A/exec" method="POST">
 					<div class="row">
 						<div class="input-field col-6 ">
-							<input id="nomor_laporan" placeholder="Nomor Laporan" name="nomor_laporan" type="text" class="validate form-control" required>
+							<input id="nomor_laporan" name="nomor_laporan" type="text" class="validate form-control" required>
 							<label for="nomor_laporan">Nomor Laporan</label>
 						</div>
 						<div class="input-field col-6 ">
-							<input id="nama_kegiatan"  placeholder="Masukkan Nama Kegiatan" name="nama_kegiatan" type="text" class="validate" required>
+							<input id="nama_kegiatan" name="nama_kegiatan" type="text" class="validate" required>
 							<label for="nama_kegiatan">Nama Kegiatan</label>
 						</div>
 						<div class="input-field col-6">
@@ -201,13 +201,13 @@
 						</div>
 						<div class="input-field col-6 ">
 							<button type="button" class="waves-effect waves-light btn modal-trigger grey darken-4 w-100 btn-icon-center" data-target="modalImage">
-							<span class="material-symbols-outlined">folder_open</span>PILIH GAMBAR
+							<span class="material-symbols-outlined">folder</span>Pilih Data
 							</button>
 							<input type="hidden" id="image_activity" name="image_activity">
 						</div>
 						<div class="col s12">
 							<button type="submit" class="waves-effect waves-light btn grey darken-4 btn-icon-start">
-							<span class="material-symbols-outlined">save</span>SIMPAN DATA
+							<span class="material-symbols-outlined">send</span>Simpan Data
 							</button>
 						</div>
 					</div>
@@ -219,15 +219,15 @@
 				<h5 class="modal-title">Pilih Gambar</h5>
 				<div class="">
 				    <button type="button" class="modal-trigger waves-effect waves-light btn grey m-btn-1 darken-4 btn-icon-center w-100 modal-close" data-target="modalUpload">
-				<span class="material-symbols-outlined">upload_file</span>UNGGAH GAMBAR
+				<span class="material-symbols-outlined">upload</span>Unggah Gambar
 				</button>
 				<button type="button" class="modal-trigger waves-effect waves-light btn grey m-btn-2 darken-4 btn-icon-center w-100 modal-close" data-target="modalCapture" onclick="captureModal()">
-				<span class="material-symbols-outlined">camera</span>AMBIL GAMBAR
+				<span class="material-symbols-outlined">photo_camera</span>Ambil Gambar
 				</button>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect waves-light btn-flat text-grey darken-4">TUTUP</a>
+				<a href="#!" class="modal-close waves-effect waves-light btn-flat text-grey darken-4">Batal</a>
 			</div>
 		</div>
 		<div id="modalUpload" class="modal">
@@ -235,7 +235,7 @@
 				<h5 class="modal-title">Unggah Gambar</h5>
 				<div class="file-field input-field">
 					<div class="btn grey darken-4 waves-effect waves-light">
-						<span>PILIH GAMBAR</span>
+						<span>Pilih Gambar</span>
 						<input type="file" id="imageFile">
 					</div>
 					<div class="file-path-wrapper">
@@ -253,7 +253,9 @@
 				<video autoplay="true" id="video"></video>
 				<canvas id="canvas" style="display: none;"></canvas>
 				<button type="button" class="waves-effect waves-light btn grey darken-4 m-auto" onclick="capture()" id="btnCapture" style="display: block;">Ambil Gambar</button>
-				<button type="button" class="waves-effect waves-light btn grey darken-4 m-auto" id="btnResetCapture" style="display: none;">Ulang Ambil Gambar</button>
+				<br>
+				<button type="button" class="waves-effect waves-light btn grey darken-4 m-auto " onclick="flipCamera()" id="btnFlipCamera" style="display: block;">Balik Kamera</button>
+				<button type="button" class="waves-effect waves-light btn grey darken-4 m-auto" id="btnResetCapture" style="display: none;">Ambil Gambar Lagi</button>
 			</div>
 			<div class="modal-footer">
 				<a href="#!" class="modal-close waves-effect waves-light btn grey darken-4">Simpan</a>
@@ -261,121 +263,6 @@
 			</div>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		<script>
-			function captureModal() {
-		        var video = document.querySelector("#video");
-			        if (navigator.mediaDevices.getUserMedia) {
-			            navigator.mediaDevices.getUserMedia({
-			         		video: true
-			         	})
-			         	.then(function (stream) {
-			         	    video.srcObject = stream;
-			            })
-			         	.catch(function (error) {
-			         	    console.log("Something went wrong!");
-			         	});
-			         }
-			     }
-			         
-			         var resultb64 = "";
-			         
-			         var btnCapture = document.getElementById("btnCapture");
-			         var btnResetCapture = document.getElementById("btnResetCapture");
-			         
-			         function capture() {
-			         	var canvas = document.getElementById('canvas');
-			         	var video = document.getElementById('video');
-			         	var videoQuery = document.querySelector("#video");
-			         
-			         	var videoWidth = video.videoWidth;
-			         	var videoHeight = video.videoHeight;
-			         
-			         	var canvasSize = Math.min(videoWidth, videoHeight);
-			         	canvas.width = canvasSize;
-			         	canvas.height = canvasSize;
-			         
-			         	var offsetX = (videoWidth - canvasSize) / 2;
-			         	var offsetY = (videoHeight - canvasSize) / 2;
-			         
-			         	canvas.getContext('2d').drawImage(video, offsetX, offsetY, canvasSize, canvasSize, 0, 0, canvas.width, canvas.height);
-			         
-			         	resultb64 = canvas.toDataURL();
-			         
-			         	document.getElementById("image_activity").value = resultb64.split(',')[1];
-			         	video.style.display = "none";
-			         	canvas.style.display = "block";
-			         	btnCapture.style.display = "none";
-			         	btnResetCapture.style.display = "block";
-			         	if (navigator.mediaDevices.getUserMedia) {
-			         		navigator.mediaDevices.getUserMedia({
-			         				video: false
-			         			})
-			         			.then(function (stream) {
-			         				videoQuery.srcObject = stream;
-			         			})
-			         			.catch(function (error) {
-			         				console.log("Something went wrong!");
-			         			});
-			         	}
-			         }
-			         
-			         document.getElementById("btnResetCapture").addEventListener("click", function () {
-			         	document.getElementById("image_activity").value = "";
-			         	video.style.display = "block";
-			         	canvas.style.display = "none";
-			         	btnCapture.style.display = "block";
-			         	btnResetCapture.style.display = "none";
-			         	if (navigator.mediaDevices.getUserMedia) {
-			         		navigator.mediaDevices.getUserMedia({
-			         				video: true
-			         			})
-			         			.then(function (stream) {
-			         				video.srcObject = stream;
-			         			})
-			         			.catch(function (error) {
-			         				console.log("Something went wrong!");
-			         			});
-			         	}
-			         });
-			         
-			         document.addEventListener('DOMContentLoaded', function () {
-			         
-			         	document.getElementById('imageFile').addEventListener('change', function (event) {
-			         		var file = event.target.files[0];
-			         		var reader = new FileReader();
-			         		reader.onloadend = function () {
-			         			document.getElementById('image_activity').value = reader.result.split(',')[1];
-			         		}
-			         		reader.readAsDataURL(file);
-			         	});
-			         
-			         	var sidenav = document.querySelectorAll('.sidenav');
-			         	var sidenavInstances = M.Sidenav.init(sidenav);
-			         	var datepicker = document.querySelectorAll('.datepicker');
-			         	var instances = M.Datepicker.init(datepicker);
-			         	var elem = document.querySelectorAll('select');
-			         	var instance = M.FormSelect.init(elem);
-			         	var modal = document.querySelectorAll('.modal');
-			         	var modalInstances = M.Modal.init(modal);
-			         
-			         	setTimeout(function () {
-			         		var app = document.getElementById('app');
-			         
-			         		preloader.classList.add('fade');
-			         
-			         		setTimeout(function () {
-			         			preloader.classList.add('d-none');
-			         		}, 0);
-			         
-			         		setTimeout(function () {
-			         			app.classList.remove('d-none');
-			         		}, 0)
-			         
-			         		setTimeout(function () {
-			         			app.classList.add('show');
-			         		}, 0);
-			         	}, 0);
-			         });
-		</script>
+		<script src="script.js"></script>
 	</body>
 </html>

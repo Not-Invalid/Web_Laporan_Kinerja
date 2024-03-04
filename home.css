@@ -1,0 +1,213 @@
+:root {
+    --primary: #212121;
+    --second: #0B60B0;
+    --third: #40A2D8;
+    --fourth: #F0EDCF;
+ }
+ *,
+ *::after,
+ *::before {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+ html,
+ body {
+    min-width: 100vw;
+    width: 100%;
+ }
+ body {
+    display: flex;
+    padding: 20px;
+    background-color: #fff;
+    height: 100%;
+    min-height: 100vh;
+    color: var(--primary);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ }
+ .card {
+    width: 340px;
+    position: relative;
+    background-color: #fff;
+    background-image: var(--second);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 8px rgba(11, 96, 176, 0.8);
+ }
+ .card[data-state="#about"] {
+    height: 500px;
+ }
+ .card[data-state="#rules"] {
+    height: 600px;
+ }
+ .card[data-state="#info"] {
+    height: 430px;
+ }
+ .card-header {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-color: var(--second);
+    transition: height 0.3s ease;
+ }
+ .card-header::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1.5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--second);
+ }
+
+ a {
+    display: inline-block;
+    padding: 12px 32px 13px 32px;
+    color: #FFF;
+    background-color: var(--second);
+    font-size: 16px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid var(--primary);
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    text-decoration: none; 
+}
+ 
+ .image-cover {
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 0;
+    width: 100px;
+    height: 120px;
+    transform: translateX(-50%) translateY(-60px);
+    transition: all 0.3s;
+    object-position: center;
+ }
+ 
+ .full-name {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f1f1f1;
+    left: 38%;
+    bottom: 0;
+    transform: translateX(-50px) translateY(-25px);
+    white-space: nowrap;
+    transition: all 0.3s;
+ }
+ .job-title {
+    position: absolute;
+    font-size: 17px;
+    font-weight: 300;
+    color: #f1f1f1;
+    left: 35%;
+    bottom: 0;
+    transform: translateX(-50px) translateY(-7px);
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+    transition: all 0.3s;
+    opacity: 0.9;
+ }
+ .card-main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+ }
+ .card-buttons {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
+    display: flex;
+ }
+ .card-buttons > button {
+    flex: 1 1 auto;
+    padding: 15px 5px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    background-color: transparent;
+    color: var(--second);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+ }
+ .card-buttons > button.is-active,
+ .card-buttons > button:hover {
+    color: var(--third);
+    border-bottom-color: var(--second);
+ }
+ .card-section {
+    display: none;
+ }
+ .card-section.is-active {
+    display: block;
+    animation: FadeIn 0.6s both;
+ }
+ @keyframes FadeIn {
+    0% {
+       opacity: 0;
+       transform: translateY(40px);
+    }
+    100% {
+       opacity: 1;
+    }
+ }
+ .card-content {
+    margin: 10px;
+ }
+ .card-sub {
+    margin-bottom: 5px;
+    font-size: 15px;
+    text-transform: uppercase;
+ }
+ .timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 10px auto;
+    padding: 20px 0;
+    width: 90%;
+ }
+ 
+ .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+ }
+ 
+ .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--second);
+    margin-right: 20px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+ }
+ 
+ .timeline-content {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    position: relative;
+ }
+ 
+ .timeline-title {
+    margin-top: 0;
+ }
+ 

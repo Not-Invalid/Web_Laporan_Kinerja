@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Profile Card</title>
+      <title>Web Laporan Kinerja</title>
       <link
          rel="stylesheet"
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -11,43 +11,59 @@
          crossorigin="anonymous"
          referrerpolicy="no-referrer"
       />
-      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="home.css" />
    </head>
    <body>
       <div class="card" data-state="#about">
          <div class="card-header">
             <img src="smk_logo.png" alt="" class="image-cover" />
             <h1 class="full-name">Smkn 4 Tangerang</h1>
-            <h2 class="job-title">UI Developer</h2>
+            <h2 class="job-title">Aplikasi Laporan Kinerja</h2>
          </div>
          <div class="card-main">
             <div class="card-section is-active" id="about">
                <div class="card-content">
-                  <h2 class="card-sub">About</h2>
+                  <h2 class="card-sub">Home</h2>
                   <p class="card-dec">
-                     Ini adalah bagian tentang informasi umum.
+                    Selamat datang di aplikasi laporan kinerja SMKN 4 Tangerang. Aplikasi ini dirancang untuk memudahkan pelaporan hasil kegiatan guru.
                   </p>
                   <br>
                   <a href="index.html">Forms</a>
+                  <br><br>
+                  <a href="https://docs.google.com/spreadsheets/d/11KTpv50bgIehaUw_H2P6JN76J1_eizzwJwIzZZsfeN8/edit#gid=0">Lihat Data</a>
                </div>
             </div>
             <div class="card-section" id="rules">
                <div class="card-content">
-                  <h2 class="card-sub">Rules</h2>
-                  <p class="card-dec">Ini adalah bagian tentang peraturan.</p>
+                  <h2 class="card-sub">Steps</h2>
+                  <p class="card-dec">Tata cara menggunakan aplikasi ini adalah</p>
                   <div class="timeline">
                      <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                           <h3 class="timeline-title">Peraturan 1</h3>
-                           <p>Deskripsi peraturan 1.</p>
+                           <h3 class="timeline-title">Langkah 1</h3>
+                           <p>Buka menu Home</p>
                         </div>
                      </div>
                      <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                           <h3 class="timeline-title">Peraturan 2</h3>
-                           <p>Deskripsi peraturan 2.</p>
+                           <h3 class="timeline-title">Langkah 2</h3>
+                           <p>Klik tombol forms</p>
+                        </div>
+                     </div>
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                           <h3 class="timeline-title">Langkah 3</h3>
+                           <p>Isi form sesuai dengan hasil laporan dan submit</p>
+                        </div>
+                     </div>
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                           <h3 class="timeline-title">Langkah 4</h3>
+                           <p>Klik lihat data jika ingin melihat hasil laporan</p>
                         </div>
                      </div>
                   </div>
@@ -55,17 +71,19 @@
             </div>
             <div class="card-section" id="info">
                <div class="card-content">
-                  <h2 class="card-sub">Contact</h2>
+                  <h2 class="card-sub">Info</h2>
                   <p class="card-dec">
-                     Ini adalah bagian tentang informasi kontak.
+                    <div class="timeline-content">
+                        <p>Aplikasi Ini dibuat oleh</p>
+                     </div>
                   </p>
                </div>
             </div>
          </div>
          <div class="card-buttons">
-            <button data-section="#about" class="is-active">About</button>
-            <button data-section="#rules">Rules</button>
-            <button data-section="#info">Contact</button>
+            <button data-section="#about" class="is-active">Home</button>
+            <button data-section="#rules">Steps</button>
+            <button data-section="#info">Info</button>
          </div>
       </div>
       <script>
