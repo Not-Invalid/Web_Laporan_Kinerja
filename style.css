@@ -117,6 +117,10 @@ span {
   color: #fff ;
 }
 
+.btn.get_started_btn i {
+    margin-left: 0.25rem;
+  }
+
 .btn.see_data_btn {
   display: flex;
   justify-content: center;
