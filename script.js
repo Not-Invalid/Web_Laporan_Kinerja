@@ -3,37 +3,45 @@ function captureModal() {
    if (navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices
          .getUserMedia({
-            video: true,
-         })
-         .then(function (stream) {
-            video.srcObject = stream;
-         })
-         .catch(function (error) {
-            console.log("Something went wrong!");
-         });
-   }
-}
-
-var flipCameraStatus = false;
-
-function flipCamera() {
-   var video = document.querySelector("#video");
-   if (navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices
-         .getUserMedia({
             video: {
-               facingMode: flipCameraStatus ? "environment" : "user",
+               facingMode: "environment",
             },
          })
          .then(function (stream) {
             video.srcObject = stream;
-            flipCameraStatus = !flipCameraStatus;
          })
          .catch(function (error) {
             console.log("Something went wrong!");
          });
    }
 }
+
+const videoElement = document.getElementById("video");
+
+function flipCamera() {
+   const constraints = {
+      video: {
+         facingMode:
+            videoElement.srcObject.getVideoTracks()[0].getSettings()
+               .facingMode === "user"
+               ? "environment"
+               : "user",
+      },
+   };
+
+   videoElement.srcObject.getTracks().forEach((track) => {
+      track.stop();
+   });
+   navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then((stream) => {
+         videoElement.srcObject = stream;
+      })
+      .catch((err) => console.error("Error accessing camera:", err));
+}
+
+const flipButton = document.getElementById("flipButton");
+flipButton.addEventListener("click", flipCamera);
 
 var resultb64 = "";
 
@@ -52,8 +60,8 @@ function capture() {
    canvas.width = canvasSize;
    canvas.height = canvasSize;
 
-   var offsetX = (videoWidth - canvasSize) / 3;
-   var offsetY = (videoHeight - canvasSize) / 3;
+   var offsetX = (videoWidth - canvasSize) / 2;
+   var offsetY = (videoHeight - canvasSize) / 2;
 
    canvas
       .getContext("2d")
@@ -124,13 +132,4 @@ document.addEventListener("DOMContentLoaded", function () {
          };
          reader.readAsDataURL(file);
       });
-
-   var sidenav = document.querySelectorAll(".sidenav");
-   var sidenavInstances = M.Sidenav.init(sidenav);
-   var datepicker = document.querySelectorAll(".datepicker");
-   var instances = M.Datepicker.init(datepicker);
-   var elem = document.querySelectorAll("select");
-   var instance = M.FormSelect.init(elem);
-   var modal = document.querySelectorAll(".modal");
-   var modalInstances = M.Modal.init(modal);
 });
